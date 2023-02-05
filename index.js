@@ -11,7 +11,7 @@ const { MONGO_URL, PORT, FRONTEND_URL, NODE_ENV, BASE_URL } = process.env;
 const app = express();
 const endpoint = '/api/v1/movies';
 const corsOptions = {
-  origin: FRONTEND_URL,
+  origin: [FRONTEND_URL, BASE_URL],
 };
 
 // middleware
