@@ -92,7 +92,9 @@ const swagger = (app) => {
     res.setHeader('Content-Type', 'application/json');
     res.send(specs);
   });
-  console.log(`Swagger docs: ${process.env.BASE_URL}/api-docs`);
+  console.log(
+    `Swagger docs: ${process.env.BASE_URL}/api-docs 🔗 crtl or cmd + click to open in browser 🌐`
+  );
 };
 
 export default swagger;

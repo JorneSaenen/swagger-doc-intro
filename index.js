@@ -25,14 +25,17 @@ const startServer = async () => {
   try {
     mongoose.set(`strictQuery`, true);
     mongoose.connect(MONGO_URL);
-    console.log('Database is connected');
+    console.log('Database is connected ✅');
     app.listen(PORT, () => {
-      console.log(`Server is running in ${NODE_ENV} mode`);
-      console.log(`${BASE_URL}`);
+      console.log(`Server is running in ${NODE_ENV} mode ✅`);
+      console.log(
+        `Server: ${BASE_URL} 🔗 crtl or cmd + click to open in browser 🌐`
+      );
       swagger(app);
     });
   } catch (error) {
     console.error(error);
   }
 };
+
 startServer();
