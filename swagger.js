@@ -1,5 +1,6 @@
 import swaggerJSDoc from 'swagger-jsdoc';
 import swaggerUi from 'swagger-ui-express';
+
 import {
   Movies,
   Movie,
@@ -54,15 +55,10 @@ const options = {
         bearerAuth: [],
       },
     ],
-    schemes: ['http', 'https'],
     servers: [
       {
         url: 'http://localhost:3000',
         description: 'Local server',
-      },
-      {
-        url: 'https://deployed-server.com',
-        description: 'Deploy server',
       },
     ],
   },

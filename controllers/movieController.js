@@ -2,7 +2,6 @@ import Movie from '../models/MovieSchema.js';
 
 const getAllMovies = async (req, res) => {
   try {
-    //console.log(req.headers);
     if (req.headers.authorization !== 'Bearer ' + process.env.TOKEN) {
       return res.status(401).json({ message: 'Unauthorized' });
     }
@@ -10,7 +9,7 @@ const getAllMovies = async (req, res) => {
     const movies = await Movie.find();
 
     if (title?.toLowerCase()) {
-      const filteredMovies = result.filter((movie) =>
+      const filteredMovies = movies.filter((movie) =>
         movie.title?.toLowerCase().includes(title?.toLowerCase())
       );
       return res.status(200).json(filteredMovies);
